@@ -1,6 +1,6 @@
 			Read 1
 			Load 1
-			JGTZ bigz
+			Jgtz bigz
 			Write =0
 			Halt 
 	bigz	:	Store 3
@@ -12,6 +12,6 @@
 			Load 2
 			Sub =1
 			Store 2
-			JGTZ while
+			Jgtz while
 			Write 3
 			Halt

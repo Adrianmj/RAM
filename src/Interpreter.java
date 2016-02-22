@@ -51,48 +51,49 @@ public class Interpreter {
 
 	private void interpreta(String instruccion) {
 		String[] aux = instruccion.split(" ");
-		aux[0] = aux[0].toLowerCase();
+		aux[0] = aux[0].toUpperCase();
 		if (aux.length > 2) {
 			error(aux);
 		}
 		switch (aux[0]) {
-		case "load":
+		case "LOAD":
 			load(aux);
 			break;
-		case "store":
+		case "STORE":
 			store(aux);
 			break;
-		case "read":
+		case "READ":
 			read(aux);
 			break;
-		case "write":
+		case "WRITE":
 			write(aux);
 			break;
-		case "add":
+		case "ADD":
 			add(aux);
 			break;
-		case "sub":
+		case "SUB":
 			sub(aux);
 			break;
-		case "mul":
+		case "MUL":
 			mul(aux);
 			break;
-		case "div":
+		case "DIV":
 			div(aux);
 			break;
-		case "halt":
+		case "HALT":
 			halt(aux);
 			break;
-		case "jump":
+		case "JUMP":
 			jump(aux);
 			break;
-		case "jzero":
+		case "JZERO":
 			jzero(aux);
 			break;
-		case "jgtz":
+		case "JGTZ":
 			jgtz(aux);
 			break;
 		default:
+			error(aux);
 			break;
 		}
 	}
