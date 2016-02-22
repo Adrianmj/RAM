@@ -52,6 +52,9 @@ public class Interpreter {
 	private void interpreta(String instruccion) {
 		String[] aux = instruccion.split(" ");
 		aux[0] = aux[0].toLowerCase();
+		if (aux.length > 2) {
+			error(aux);
+		}
 		switch (aux[0]) {
 		case "load":
 			load(aux);
@@ -95,7 +98,11 @@ public class Interpreter {
 	}
 
 	private void error(String[] operandos) {
-		System.err.println("Error en " + operandos[0] + " " + operandos[1]);
+		String error = "Error en";
+		for (int i = 0; i < operandos.length; i++) {
+			error += " " + operandos[i];
+		}
+		System.err.println(error);
 		System.exit(1);
 	}
 

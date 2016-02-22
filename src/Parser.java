@@ -17,15 +17,18 @@ public class Parser {
 			int line = 0;
 			while (ArchivoEnBuffer.ready()) {
 				linea = ArchivoEnBuffer.readLine();
-
+				System.out.println(linea);
 				if (linea.charAt(0) != ';') {
 					// System.out.println(linea);
 					if (linea.contains(":")) {
 
 						String[] aux = linea.split(":");
-						String[] aux1 = parseSpaceAndTabs(aux[0]);
-						saltos.put(aux1[1], line);
-
+						//String[] aux1 = parseSpaceAndTabs(aux[0]);
+						String aux1 = aux[0].replace(" ","");
+						aux1 = aux1.replace("	","");
+						System.out.println(aux1);
+						saltos.put(aux1, line);
+						
 						// Preparamos las instrucciones
 						aux[1] = aux[1].replace("\t", "");
 						instrucciones.add(aux[1]);

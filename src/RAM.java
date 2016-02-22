@@ -5,7 +5,7 @@ public class RAM {
 	private Hashtable<String, Integer> saltos = new Hashtable<>();
 	private ArrayList<String> instrucciones = new ArrayList<>();
 	public RAM() {
-		Parser ramParser = new Parser("test2.ram");
+		Parser ramParser = new Parser("nn.ram");
 		this.saltos = ramParser.getTabla();
 		this.instrucciones = ramParser.getInstrucciones();
 		CintaEntrada entrada = new CintaEntrada();
